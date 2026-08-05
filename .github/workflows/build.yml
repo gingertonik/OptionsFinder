@@ -1,0 +1,50 @@
+name: Build OptionsFinder
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'images/**'
+      - '.gitignore'
+      - 'LICENSE.md'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'images/**'
+      - '.gitignore'
+      - 'LICENSE.md'
+
+jobs:
+
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Download Dalamud
+      run: |
+        Invoke-WebRequest -Uri https://goatcorp.github.io/dalamud-distrib/latest.zip -OutFile latest.zip
+        Expand-Archive -Force latest.zip "$env:AppData\XIVLauncher\addon\Hooks\dev"
+
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+
+    - name: List build output
+      run: Get-ChildItem -Recurse .\OptionsFinder\bin\x64\Release
+
+    - name: Store artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: OptionsFinder
+        path: .\OptionsFinder\bin\x64\Release\**
+        if-no-files-found: error
+        retention-days: 1

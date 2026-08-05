@@ -1,0 +1,18 @@
+[
+  {
+    "Author": "gingertonik",
+    "Name": "OptionsFinder",
+    "Punchline": "Search and edit the game's Character and System Configuration menu options.",
+    "Description": "Adds a searchable window over the options in the game's native Character Configuration and System Configuration menus. Type part of an option's name, see its current value, and edit it inline. Values are read and written through Dalamud's IGameConfig service, the same store the native menus use. Use /ofinder or /pfind to toggle the window in-game.",
+    "Changelog": "Initial release.",
+    "InternalName": "OptionsFinder",
+    "AssemblyVersion": "0.0.1.0",
+    "RepoUrl": "https://github.com/gingertonik/OptionsFinder",
+    "Tags": ["utility", "configuration"],
+    "DalamudApiLevel": 15,
+    "DownloadLinkInstall": "https://github.com/gingertonik/OptionsFinder/releases/latest/download/latest.zip",
+    "DownloadLinkTesting": "https://github.com/gingertonik/OptionsFinder/releases/latest/download/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/gingertonik/OptionsFinder/releases/latest/download/latest.zip",
+    "IconUrl": "https://raw.githubusercontent.com/gingertonik/OptionsFinder/main/images/icon.png"
+  }
+]

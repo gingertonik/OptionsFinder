@@ -1,0 +1,13 @@
+{
+  "Author": "nooj",
+  "Name": "OptionsFinder",
+  "Punchline": "Search and edit Character/System Configuration options from one window.",
+  "Description": "Adds a searchable window for the options in FFXIV's native Character Configuration and System Configuration menus. Use /ofinder or /pfind to toggle the window.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "configuration",
+    "settings",
+    "search",
+    "options"
+  ]
+}
